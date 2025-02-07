@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pratik Kumar | Web Developer</title>
+    <!-- Google Font (Inter) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind Config: Enable class-based dark mode -->
+    <script>
+      tailwind = {
+        config: {
+          darkMode: 'class',
+        },
+      };
+    </script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              float: 'float 3s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0, transform: 'translateY(20px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      /* Simple fade-in animation */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <!-- Sticky Navigation Bar with Theme Toggle -->
+    <nav
+      class="sticky top-0 z-50 bg-gray-100 dark:bg-gray-900 bg-opacity-90 backdrop-blur-lg shadow-md"
+    >
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="text-2xl font-bold">Pratik Kumar</div>
+        <div class="flex items-center space-x-4">
+          <a
+            href="#about"
+            class="hover:text-indigo-400 transition-colors duration-300"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="hover:text-indigo-400 transition-colors duration-300"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="hover:text-indigo-400 transition-colors duration-300"
+            >Projects</a
+          >
+          <a
+            href="#education"
+            class="hover:text-indigo-400 transition-colors duration-300"
+            >Education</a
+          >
+          <a
+            href="#certifications"
+            class="hover:text-indigo-400 transition-colors duration-300"
+            >Certifications</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-indigo-400 transition-colors duration-300"
+            >Contact</a
+          >
+          <!-- Theme Toggle Button -->
+          <button
+            id="theme-toggle"
+            onclick="toggleTheme()"
+            class="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+          >
+            <!-- The icon (emoji) will update via JavaScript -->
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="fade-in bg-gradient-to-r from-indigo-300 to-blue-300 dark:from-indigo-900 dark:to-gray-900 py-20"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold mb-4">Pratik Kumar</h1>
+        <p class="text-2xl mb-2">Web Developer</p>
+        <p class="mb-2">Howrah, India</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in py-16 bg-white dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl font-bold mb-8 border-b-2 border-indigo-500 pb-2 inline-block"
+        >
+          About Me
+        </h2>
+        <p class="text-lg leading-relaxed">
+          Hello! I'm Pratik Kumar, a passionate web developer with expertise in
+          full-stack development. I specialize in building robust web
+          applications and have hands-on experience with technologies like
+          Node.js, Python, and more. I am dedicated to creating efficient,
+          scalable, and user-friendly solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl font-bold mb-8 border-b-2 border-indigo-500 pb-2 inline-block"
+        >
+          Skills
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-lg">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">Programming Languages</h3>
+            <ul class="list-disc ml-6 space-y-1">
+              <li>C++</li>
+              <li>JavaScript</li>
+              <li>Python</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">
+              Frameworks &amp; Libraries
+            </h3>
+            <ul class="list-disc ml-6 space-y-1">
+              <li>Node.js</li>
+              <li>Express.js</li>
+              <li>Sequelize</li>
+              <li>Tailwind CSS</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">Cloud Services / Tools</h3>
+            <ul class="list-disc ml-6 space-y-1">
+              <li>GitHub</li>
+              <li>AWS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in py-16 bg-white dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl font-bold mb-8 border-b-2 border-indigo-500 pb-2 inline-block"
+        >
+          Projects
+        </h2>
+
+        <!-- Expense Tracker -->
+        <div
+          class="mb-10 bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-lg transform transition hover:-translate-y-1 hover:shadow-2xl"
+        >
+          <h3 class="text-3xl font-semibold">
+            Expense Tracker <span class="text-indigo-400 text-xl">(2025)</span>
+          </h3>
+          <p class="mt-2">
+            <strong>Link:</strong>
+            <a
+              href="#"
+              class="text-indigo-500 dark:text-indigo-300 hover:underline"
+              >View Project</a
+            >
+          </p>
+          <p class="mt-2">
+            <strong>Technologies Used:</strong> Node.js, MySQL, AWS (EC2, RDS),
+            Razorpay, JavaScript, HTML, CSS
+          </p>
+          <ul class="list-disc ml-6 mt-2 space-y-1">
+            <li>
+              Secure login page with “Forgot Password” feature using email
+              integration.
+            </li>
+            <li>
+              Efficient expense management (add, delete, and update expenses).
+            </li>
+            <li>Leaderboard displaying users' total expenses.</li>
+            <li>Razorpay integration for premium subscription purchases.</li>
+            <li>Deployed on AWS for scalability and performance.</li>
+          </ul>
+        </div>
+
+        <!-- Weather App -->
+        <div
+          class="mb-10 bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-lg transform transition hover:-translate-y-1 hover:shadow-2xl"
+        >
+          <h3 class="text-3xl font-semibold">
+            Weather App <span class="text-indigo-400 text-xl">(2024)</span>
+          </h3>
+          <p class="mt-2">
+            <strong>Link:</strong>
+            <a
+              href="#"
+              class="text-indigo-500 dark:text-indigo-300 hover:underline"
+              >View Project</a
+            >
+          </p>
+          <p class="mt-2">
+            <strong>Technologies Used:</strong> Python, Django, HTML, CSS,
+            JavaScript
+          </p>
+          <ul class="list-disc ml-6 mt-2 space-y-1">
+            <li>Search bar for city lookup with dynamic background images.</li>
+            <li>
+              API integration to fetch and display real-time weather data.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Let's Chat -->
+        <div
+          class="mb-10 bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-lg transform transition hover:-translate-y-1 hover:shadow-2xl"
+        >
+          <h3 class="text-3xl font-semibold">
+            Let's Chat
+            <span class="text-indigo-400 text-xl">(Jan '25 - Present)</span>
+          </h3>
+          <p class="mt-2">
+            <strong>Link:</strong>
+            <a
+              href="#"
+              class="text-indigo-500 dark:text-indigo-300 hover:underline"
+              >View Project</a
+            >
+          </p>
+          <p class="mt-2">
+            <strong>Technologies Used:</strong> Node.js, Express.js, MySQL,
+            Websockets, HTML, CSS, JavaScript
+          </p>
+          <ul class="list-disc ml-6 mt-2 space-y-1">
+            <li>User signup and login functionality.</li>
+            <li>Chat interface displaying the logged-in user’s details.</li>
+            <li>
+              Planned features: real-time chat updates, group creation, admin
+              controls, and multimedia sharing.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="fade-in py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl font-bold mb-8 border-b-2 border-indigo-500 pb-2 inline-block"
+        >
+          Education
+        </h2>
+        <div class="space-y-6 text-lg">
+          <div>
+            <h3 class="text-2xl font-semibold">
+              B.Tech in Computer Science and Engineering
+            </h3>
+            <p class="text-indigo-500 dark:text-indigo-300">
+              Dr. A.P.J. Abdul Kalam Technical University (2019 — 2023) |
+              Lucknow, India
+            </p>
+            <p>GPA: 7.38</p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold">Higher Secondary</h3>
+            <p class="text-indigo-500 dark:text-indigo-300">
+              Salkia Vikram Vidyalaya (2019) | Howrah, India
+            </p>
+            <p>GPA: 8.0</p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold">Secondary</h3>
+            <p class="text-indigo-500 dark:text-indigo-300">
+              Shree Jain Vidyalaya (2017) | Kolkata, India
+            </p>
+            <p>GPA: 7.31</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section
+      id="certifications"
+      class="fade-in py-16 bg-white dark:bg-gray-800"
+    >
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl font-bold mb-8 border-b-2 border-indigo-500 pb-2 inline-block"
+        >
+          Certifications
+        </h2>
+        <ul class="list-disc ml-6 text-lg space-y-1">
+          <li>Computer System Security, IIT Kanpur (Mar '21)</li>
+          <li>Web Development (Jul '23)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="fade-in py-16 bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-900"
+    >
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl font-bold mb-8 border-b-2 border-indigo-500 pb-2 inline-block"
+        >
+          Contact
+        </h2>
+        <div class="text-lg">
+          <p class="mb-2"><strong>Phone:</strong> 8420149924</p>
+          <p class="mb-2">
+            <strong>Email:</strong>
+            <a
+              href="mailto:pratikumar56@gmail.com"
+              class="text-indigo-500 dark:text-indigo-300 hover:underline"
+            >
+              pratikumar56@gmail.com
+            </a>
+          </p>
+          <p class="mb-2"><strong>Location:</strong> Howrah, India</p>
+          <div class="mt-4 space-x-4">
+            <a
+              href="#"
+              class="hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors duration-300"
+              >LinkedIn</a
+            >
+            <a
+              href="#"
+              class="hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors duration-300"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-900 py-4">
+      <div
+        class="container mx-auto px-4 text-center text-sm text-gray-600 dark:text-gray-400"
+      >
+        &copy; 2025 Pratik Kumar. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- JavaScript for Dark/Light Theme Toggle -->
+    <script>
+      // Initialization: default to light mode unless "dark" is set in localStorage
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+
+      function updateThemeIcon() {
+        const btn = document.getElementById('theme-toggle');
+        if (document.documentElement.classList.contains('dark')) {
+          btn.innerHTML = '🌜'; // Moon icon for dark mode
+        } else {
+          btn.innerHTML = '🌞'; // Sun icon for light mode
+        }
+      }
+
+      function toggleTheme() {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        updateThemeIcon();
+      }
+
+      updateThemeIcon();
+    </script>
+  </body>
+</html>
